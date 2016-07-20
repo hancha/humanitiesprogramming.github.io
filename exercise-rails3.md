@@ -14,8 +14,7 @@ necessarily look very nice. Since we have to look at this, now is a good
 time to get a bit further into implementing an updated view from the
 **View** layer using Ruby's built-in ERB templating language.
 
-Don't tell the instructors in the **Introduction to Web Development and
-Design Principals**, but we're going to use a shortcut in our design and
+Don't tell the instructors in your local web design course, but we're going to use a shortcut in our design and
 layout with the [Twitter Bootstrap](http://getbootstrap.com/) CSS
 framework not only to make things look a lot better, but also to give us a
 version of the application that works as well on mobile devices as it
@@ -120,11 +119,12 @@ table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 {% endhighlight %}
 
-If you refresh your the page of transcrions ([http://localhost:3000/transcriptions][t]),
+If you refresh your the page of transcriptions ([http://localhost:3000/transcriptions][t]),
 you should see something that looks much better.
 
 ![Bootstrap Header]({{ "/assets/img/exercises/rails-three/bootstrap-header-update.png" | prepend: site.baseurl }}){: .img-responsive}
 
+There are still some problems though. Notice how username came out looking a bit wonky? Can you figure out how to fix that? What box might you need to modify in the CSS/SCSS?
 
 ## Git
 

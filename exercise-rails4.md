@@ -150,7 +150,11 @@ We need to update it to read like this:
 <%= image_tag(@transcription.picture_url, :width => 600) if @transcription.picture.present? %>
 {% endhighlight %}
 
-Now if you refresh your browser, does the image show up? Do we have
+Now if you refresh your browser, does the image show up? 
+
+Hint: are you looking at the right page? A 'show' view only refers to a single item in the database. 
+
+Do we have
 access to any additional sizes of images (e.g. thumbnails)?
 
 ## Generating Derivatives
@@ -161,7 +165,7 @@ doesn't do this directly, but provides access to two systems that do,
 `RMagick` and `MiniMagick`. For CarrierWave, `MiniMagick` is
 recommended, so we'll use that. This does require a system library named
 [imagemagick][imagemagick] which is a Linux-based interface for working with image
-files. First, let's install `imagemagick` with `homebrew`.
+files. First, let's install `imagemagick` with `homebrew`. If you don't have homebrew installed, download it [here](http://brew.sh/) using the command line.
 
 {% highlight console %}
 $ brew install imagemagick
@@ -215,7 +219,7 @@ slight changes to the file, so read these carefully.
 
 Now create a new transcription and add a new file. If you open the
 `public/uploads/` directory, you should see two files in the latest
-created file.
+created file. (If you have already uploaded photos, the number in the file path will change depending on the number of the photos uploaded. Second photo will be two, etc.)
 
 {% highlight console %}
 $ ls -la public/uploads/transcription/picture/1/
@@ -233,8 +237,10 @@ method, but pass the `:thumb` symbol to retrieve the thumbnail version.
 <% @transcriptions.each do |transcription| %>
   <tr>
     <td><%= transcription.title %></td>
-    <td><%= transcription.description %></td>
+    <td><%= transcription.user_name %></td>
     <td><%= image_tag transcription.picture_url(:thumb) if transcription.picture.present? %></td>
+    <td><%= transcription.description %></td>
+    <td><%= transcription.transcription %></td>
     <td><%= link_to 'Show', transcription %></td>
     <td><%= link_to 'Edit', edit_transcription_path(transcription) %></td>
     <td><%= link_to 'Destroy', transcription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -244,7 +250,7 @@ method, but pass the `:thumb` symbol to retrieve the thumbnail version.
 
 Start your server back up (if it's not running) and see what happens.
 Are you seeing thumbnails for new items? What do you notice when you
-upload an image?
+upload an image? Are you seeing thumbnails for older items? Why not?
 
 > **Note**: In development you may, from time-to-time, need to reset
 > your database and clear out test data. The easiest way to do this is

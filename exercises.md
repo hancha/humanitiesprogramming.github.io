@@ -18,8 +18,8 @@ description: Course Exercises
 * [Add Keys to Github](https://help.github.com/articles/generating-ssh-keys)
 
 ## Ruby
-* [Ruby Exercise One]({{ "/exercises/ruby-one/" | prepend: site.baseurl }})
-* [Ruby Exercise Two]({{ "/exercises/ruby-two/" | prepend: site.baseurl }})
+* [Ruby Exercises One]({{ "/exercises/ruby-one/" | prepend: site.baseurl }})
+* [Ruby Exercises Two]({{ "/exercises/ruby-two/" | prepend: site.baseurl }})
 * [Debugging Exercises]({{ "/exercises/broken_ruby/" | prepend: site.baseurl }})
 
 ## Rails
@@ -35,5 +35,5 @@ description: Course Exercises
 * [Exercise Ten: Adding User Comments]({{ "/exercises/rails-ten/" | prepend: site.baseurl }})
 * [Exercise Eleven: Deploying to Heroku]({{ "/exercises/rails-eleven/" | prepend: site.baseurl }})
 * [Exercise Twelve: Testing with RSpec]({{ "/exercises/rails-twelve/" | prepend: site.baseurl }})
-* [Exercise Thirteen: Continious Integration]({{ "/exercises/rails-thirteen/" | prepend: site.baseurl }})
+* [Exercise Thirteen: Continuous Integration]({{ "/exercises/rails-thirteen/" | prepend: site.baseurl }})
 

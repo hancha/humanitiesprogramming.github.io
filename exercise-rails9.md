@@ -63,6 +63,7 @@ has been created, or a current item has been updated). Open
 `app/views/transcription/show.html.erb` and replace with the following:
 
 {% highlight rhtml %}
+
 <% unless notice.nil? %>
 <div class="row">
   <div class="col-md-12">
@@ -95,6 +96,8 @@ has been created, or a current item has been updated). Open
   </div>
 
   <div class="col-md-6">
+    <h3>User name</h3>
+    <%= @transcription.user_name %>
     <h3>Transcription</h3>
     <%= simple_format @transcription.transcription %>
   </div>
@@ -104,6 +107,7 @@ has been created, or a current item has been updated). Open
   <%= link_to 'Edit', edit_transcription_path(@transcription), class: "btn btn-primary" %>
   <%= link_to 'Back', transcriptions_path, class: "btn btn-success" %>
 </div>
+
 {% endhighlight %}
 
 Ok, hands off the keyboard. What is going on here? What is `simple_format`?
@@ -135,6 +139,12 @@ Let's take a look at the `form` partial for transcriptions. Open
         <%= f.label :title %><br>
         <%= f.text_field :title, class: "form-control", placeholder: "Document Title" %>
       </div>
+
+      <div class="field">
+        <%= f.label :user_name %><br>
+        <%= f.text_field :user_name, class: "form-control", placeholder: "User name" %>
+      </div>
+
       <div class="form-group">
         <%= f.label :description %><br>
         <%= f.text_area :description, class: "form-control", placeholder: "Document Description" %>
@@ -246,8 +256,7 @@ framework provides. In many projects, the design process takes as much (if not
 more) time to get to a point where the front-end is thought through to ensure
 users can perform the intended actions of an application with little (or no)
 help from you, the developer. If you're interested in this component of the
-software lifecycle, I would encourage you to consider taking the
-[Introduction to Web Development and Design Principals][design] course.
+software lifecycle, I would encourage you to consider taking a course in web development and design principles. Sometimes we even have them at [HILT](http://www.dhtraining.org/hilt/course/introduction-to-web-development-design-and-principles/)!
 
 [design]: http://www.dhtraining.org/hilt/course/introduction-to-web-development-design-and-principles/
 
